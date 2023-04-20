@@ -14,7 +14,7 @@ function onGetTime(evt) {
    
 };
    function saveCurrentTime() {
-  window.localStorage.setItem(storageKey, JSON.stringify(currentTime));
+  localStorage.setItem(storageKey, JSON.stringify(currentTime));
 };
 
 currentTimeParsed = JSON.parse(localStorage.getItem(storageKey));
