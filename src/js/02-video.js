@@ -24,6 +24,15 @@ player
   .then(function (seconds) {
       seconds = currentTimeParsed; 
   })
- 
+  .catch(function (error) {
+    switch (error.name) {
+      case 'RangeError':
+
+        break;
+      default:
+
+        break;
+    }
+  });
 
 
