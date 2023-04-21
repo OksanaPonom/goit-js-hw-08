@@ -18,19 +18,23 @@ function onInputForm(evt) {
 }
    
 function onSubmitForm(evt) {
+  if (emailInput.value !== '' && messageInput.value !== '') {
     evt.preventDefault();
     evt.currentTarget.reset();
     localStorage.removeItem(storageKey);
-    console.log(formData);
-}
+      console.log(formData);
+      formData = {};
+  }
  
+}
+
+ console.log(localStorage.getItem(storageKey));
 function updateForm() {
     let savedFormData = localStorage.getItem(storageKey);
      if (savedFormData) {
-         formData = JSON.parse(savedFormData);
-
-         emailInput.value = formData.email;
-         messageInput.value = formData.message;
-    };    
-    }
+         formData = JSON.parse(savedFormData)||{};
+         emailInput.value = formData.email||'';
+         messageInput.value = formData.message||'';
+    };
+};
 

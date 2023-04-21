@@ -17,22 +17,9 @@ function onGetTime(evt) {
   localStorage.setItem(storageKey, JSON.stringify(currentTime));
 };
 
-const currentTimeParsed = JSON.parse(localStorage.getItem(storageKey));
+const currentTimeParsed = JSON.parse(localStorage.getItem(storageKey))||0;
 
-player
-  .setCurrentTime(currentTimeParsed)
-  .then(function (seconds) {
-      seconds = currentTimeParsed; 
-  })
-  // .catch(function (error) {
-  //   switch (error.name) {
-  //     case 'RangeError':
-         
-  //       break;
-  //     default:
-
-  //       break;
-  //   }
-  // });
+player.setCurrentTime(currentTimeParsed);
+ 
 
 
